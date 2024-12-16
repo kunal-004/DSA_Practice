@@ -25,5 +25,13 @@ int main(){
 
   cout << "Result: " << power(exponent, base) << endl;
 
+  char x = '^';
+  cout << (x) << "yessssssss\t less go" << endl;
+
+
+  double y = 3.14;
+  y = y * 2053500006.354536565456542636;
+  cout << fixed << y << endl;
+
   return 0;
 }                                           
