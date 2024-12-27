@@ -9,6 +9,23 @@ void rotateK(vector <int> &arr, int k, int n){
   reverse(arr.begin(), arr.end()); // reverse the whole array
 }
 
+// when we have to rotate the array by r elements in forward or backward direction
+void rotateArrayTwo(int n, char d, int r, vector < int > & num) {
+     r = r%n;
+    if(r==0) return;
+
+    if(d=='f'){
+        reverse(num.begin()+(n-r), num.end());
+        reverse(num.begin(), num.begin()+(n-r));
+        reverse(num.begin(), num.end());
+    }
+    if(d=='b'){
+        reverse(num.begin(), num.begin()+r);
+        reverse(num.begin()+r, num.end());
+        reverse(num.begin(), num.end());
+    }
+}
+
 int main(){
   vector <int> arr = {1,2,3,4,5,6,7};
   int k = 3;
