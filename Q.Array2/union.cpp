@@ -20,30 +20,22 @@ vector<int> unionArray(vector<int> a, vector<int> b){
 }
 
 // optimized approach
-vector<int> unionArray2(vector<int> a, vector<int> b) {
-    int n = a.size();  
-    int m = b.size();  
-    int i = 0, j = 0;  
-    vector<int> result;  
+vector<int> unionArray2(const vector<int>& a, const vector<int>& b) {
+    int n = a.size();
+    int m = b.size();
+    int i = 0, j = 0;
+    vector<int> result;
 
     while (i < n && j < m) {
-        if (a[i] < b[j]) {
+        if (a[i] <= b[j]) {
             if (result.empty() || result.back() != a[i]) {
                 result.push_back(a[i]);
             }
             i++;
-        } 
-        else if (b[j] < a[i]) {
+        } else {
             if (result.empty() || result.back() != b[j]) {
                 result.push_back(b[j]);
             }
-            j++;  
-        } 
-        else {
-            if (result.empty() || result.back() != a[i]) {
-                result.push_back(a[i]);
-            }
-            i++;  
             j++;
         }
     }
@@ -69,14 +61,14 @@ vector<int> unionArray2(vector<int> a, vector<int> b) {
 int main(){
   vector<int> a = {1, 2, 3, 4, 5};
   vector<int> b = {4, 5, 3, 1, 2};
-  vector<int> result = unionArray(a, b);
+
+  vector<int> res = unionArray2(a, b);
   cout << "Union of two arrays is: ";
-  for(int i = 0; i < result.size(); i++){
-    cout << result[i] << " ";
-    }
-  cout << endl;
+  for(auto i: res){
+    cout << i << " ";
+  }
   
-  vector<int> result2 = unionArray2(a, b);
+  vector<int> result2 = unionArray(a, b);
   cout << "Union of two arrays is: ";
   for(int i = 0; i < result2.size(); i++){
     cout << result2[i] << " ";
