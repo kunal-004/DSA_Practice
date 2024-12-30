@@ -68,4 +68,5 @@ int main(){
   int n = arr.size();
   cout << maxLength(arr, n, k) << endl;
   cout << maxLength2(arr, n, k) << endl;
+  cout << maxLength3(arr, n, k) << endl;
 }
