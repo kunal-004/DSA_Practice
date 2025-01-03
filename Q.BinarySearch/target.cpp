@@ -45,3 +45,4 @@ int main(){
   cout << "Recursive approach: ";
   binarySearchRecursive(arr, n, k, 0, n);
 }
+
