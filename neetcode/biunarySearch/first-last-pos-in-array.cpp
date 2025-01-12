@@ -39,8 +39,8 @@ using namespace std;
 
 
 int main(){
-  vector<int> arr = {1, 2, 55, 3, 62, 4, 5};
-  int x = 3;
+  vector<int> arr = {1, 2, 3, 4, 7, 8, 8};
+  int x = 8;
   vector<int> result = find(arr, x);
   cout << result[0] << " " << result[1] << endl;
   
