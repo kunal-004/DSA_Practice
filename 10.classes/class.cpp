@@ -1,34 +1,25 @@
-#include<iostream>
-#include<vector>
-#include<string>
-
-
+#include <bits/stdc++.h>
 using namespace std;
 
-class Player{
-  // attributes
-  string name;
-  int health;
-  int xp;
+class Cylinder
+{
+public:
+  Cylinder() : r(2), h(3)
+  {
+    std::cout << "Constructor called" << std::endl;
+  }
+  double volume()
+  {
+    return 3.14 * r * r * h;
+  }
 
-  // methods
-  void talk(string);
-  bool is_dead();
+private:
+  double r{1};
+  double h{1};
 };
 
-int main(){
-  Player frank;
-  Player hero;
-
-  Player players[] {frank, hero};
-
-  vector<Player> player_vec {frank};
-  player_vec.push_back(hero);
-
-
-  Player *enemy {nullptr};
-  enemy = new Player;
-  delete enemy;
-
-  return 0;
-}
+int main()
+{
+  Cylinder c1;
+  cout << "Volume " << c1.volume() << endl;
+};
